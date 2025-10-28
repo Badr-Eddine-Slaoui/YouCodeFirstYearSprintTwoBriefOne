@@ -72,7 +72,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-size: 12px;
   font-weight: bolder;
   cursor: pointer;
   transition: all .3s ease-in-out;
@@ -98,4 +99,22 @@
   .container .body .btn{
     font-size: 20px;
   }
+}
+
+@media screen and (min-width: 1201px) {
+    .container{
+      width: 40vw;
+      height: 60vh;
+    }
+
+    .container .title h1,
+    .container .score p{
+      font-size: 48px;
+    }
+
+    .container .body p,
+    .container .body .btn{
+      font-size: 24px;
+    }
+    
 }
