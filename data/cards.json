@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "front": "../images/front.png",
+    "back": "../images/ana.webp",
+    "match": 17
+  },
+  {
+    "id": 2,
+    "front": "../images/front.png",
+    "back": "../images/ftayza.webp",
+    "match": 18
+  },
+  {
+    "id": 3,
+    "front": "../images/front.png",
+    "back": "../images/maria.webp",
+    "match": 19
+  },
+  {
+    "id": 4,
+    "front": "../images/front.png",
+    "back": "../images/brahim.webp",
+    "match": 20
+  },
+  {
+    "id": 5,
+    "front": "../images/front.png",
+    "back": "../images/lhindi.webp",
+    "match": 21
+  },
+  {
+    "id": 6,
+    "front": "../images/front.png",
+    "back": "../images/reda.webp",
+    "match": 22
+  },
+  {
+    "id": 7,
+    "front": "../images/front.png",
+    "back": "../images/ilyas.webp",
+    "match": 23
+  },
+  {
+    "id": 8,
+    "front": "../images/front.png",
+    "back": "../images/ilias.webp",
+    "match": 24
+  },
+  {
+    "id": 9,
+    "front": "../images/front.png",
+    "back": "../images/amine.webp",
+    "match": 16
+  },
+  {
+    "id": 10,
+    "front": "../images/front.png",
+    "back": "../images/bsar.webp",
+    "match": 15
+  },
+  {
+    "id": 11,
+    "front": "../images/front.png",
+    "back": "../images/hamid.webp",
+    "match": 14
+  },
+  {
+    "id": 12,
+    "front": "../images/front.png",
+    "back": "../images/abdelhadi.webp",
+    "match": 13
+  },
+  {
+    "id": 13,
+    "front": "../images/front.png",
+    "back": "../images/abdelhadi.webp",
+    "match": 12
+  },
+  {
+    "id": 14,
+    "front": "../images/front.png",
+    "back": "../images/hamid.webp",
+    "match": 11
+  },
+  {
+    "id": 15,
+    "front": "../images/front.png",
+    "back": "../images/bsar.webp",
+    "match": 10
+  },
+  {
+    "id": 16,
+    "front": "../images/front.png",
+    "back": "../images/amine.webp",
+    "match": 9
+  },
+  {
+    "id": 17,
+    "front": "../images/front.png",
+    "back": "../images/ana.webp",
+    "match": 1
+  },
+  {
+    "id": 18,
+    "front": "../images/front.png",
+    "back": "../images/ftayza.webp",
+    "match": 2
+  },
+  {
+    "id": 19,
+    "front": "../images/front.png",
+    "back": "../images/maria.webp",
+    "match": 3
+  },
+  {
+    "id": 20,
+    "front": "../images/front.png",
+    "back": "../images/brahim.webp",
+    "match": 4
+  },
+  {
+    "id": 21,
+    "front": "../images/front.png",
+    "back": "../images/lhindi.webp",
+    "match": 5
+  },
+  {
+    "id": 22,
+    "front": "../images/front.png",
+    "back": "../images/reda.webp",
+    "match": 6
+  },
+  {
+    "id": 23,
+    "front": "../images/front.png",
+    "back": "../images/ilyas.webp",
+    "match": 7
+  },
+  {
+    "id": 24,
+    "front": "../images/front.png",
+    "back": "../images/ilias.webp",
+    "match": 8
+  }
+]
