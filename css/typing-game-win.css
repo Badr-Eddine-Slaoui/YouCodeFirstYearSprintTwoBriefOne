@@ -79,3 +79,28 @@
   color: var(--text-color);
 }
 
+@media screen and (min-width: 413px) and (max-width: 1200px) {
+  .container{
+    width: 60vw;
+    height: 60vh;
+  }
+
+  .container .title h1,
+  .container .score p{
+    font-size: 40px;
+  }
+
+  .container .score {
+    width: 50%;
+  }
+
+  .container .score p span{
+    font-size: 20px;
+  }
+
+  .container .body p,
+  .container .body .btn{
+    font-size: 20px;
+  }
+}
+
