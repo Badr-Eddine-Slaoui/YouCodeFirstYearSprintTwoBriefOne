@@ -90,3 +90,23 @@
 .back {
   transform: rotateY(180deg);
 }
+
+@media screen and (min-width: 413px) and (max-width: 1200px) {
+  .container{
+    width: 80vw;
+    height: 100vh;
+  }
+
+  .container .title h1{
+    font-size: 28px;
+  }
+
+  .header .score {
+    font-size: 40px;
+  }
+
+  .card {
+    width: 80px;
+    height: 100px;
+  }
+}
