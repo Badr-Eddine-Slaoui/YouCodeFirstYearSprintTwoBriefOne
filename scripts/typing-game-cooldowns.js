@@ -9,8 +9,8 @@ let cooldowns = {
     "hard": 5
 };
 
-document.getElementById('wpm').textContent = lastScore.wpm;
-document.getElementById('accuracy').textContent = lastScore.accuracy;
+document.getElementById('wpm').innerHTML = `${lastScore.wpm} <span>wpm</span>`;
+document.getElementById('accuracy').innerHTML = `${lastScore.accuracy} <span>%</span>`;
 
 let cooldownButtons = document.querySelectorAll('.btn');
 
