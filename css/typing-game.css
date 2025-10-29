@@ -1,0 +1,99 @@
+.container{
+  width: 80vw;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.container-header {
+  width: 100%;
+  height: 10vh;
+  background: var(--bg-color);
+  border: var(--border);
+  border-radius: 20px;
+  padding: 0 20px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bolder;
+  color: var(--text-color);
+}
+
+.container .title h1{
+  color: var(--title-color);
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.container-header .score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container-header .score {
+  font-size: 32px;
+}
+
+.container-header .score span {
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.typing-container {
+  width: 100%;
+  min-height: 85%;
+  background: var(--bg-color);
+  border: var(--border);
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 4rem;
+}
+
+.typing-container .header {
+  width: 100%;
+  height: 10%;
+  background: var(--bg-color);
+  border-radius: 20px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bolder;
+  color: var(--text-color);
+}
+
+.typing-container .header p {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.typing-container .header .cooldown {
+  font-size: 20px;
+}
+
+.typing-paragraph{
+    color: #AFAFAF;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.correct {
+  color: var(--title-color);
+}
+
+.wrong {
+  color: #ec2828;
+}
