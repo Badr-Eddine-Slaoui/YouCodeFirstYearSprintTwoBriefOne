@@ -97,3 +97,33 @@
 .wrong {
   color: #ec2828;
 }
+
+@media screen and (min-width: 413px) and (max-width: 1200px) {
+  .container{
+    width: 80vw;
+    min-height: 100vh;
+  }
+
+  .container .title h1{
+    font-size: 28px;
+  }
+
+  .header .score {
+    font-size: 40px;
+  }
+
+  .typing-container .header p {
+    font-size: 16px;
+  }
+
+  .typing-container .header .cooldown {
+    font-size: 28px;
+  }
+
+  .typing-paragraph{
+    font-size: 24px;
+    line-height: 1.8;
+  }
+
+}
+
