@@ -1,3 +1,10 @@
+let lastScore = {
+  wpm: localStorage.getItem("TypingGame_lastWPM") || 0,
+  accuracy: localStorage.getItem("TypingGame_lastAccuracy") || 0,
+};
+
+document.getElementById("last_score").textContent = lastScore.wpm;
+
 let failuresCount = 0;
 let matchesCount = 0;
 let wordAVG = 5;
@@ -28,7 +35,6 @@ document.addEventListener("keydown", function (event) {
 
   event.preventDefault();
   if (key === "Backspace") {
-    console.log(letterIndex);
     if (letterIndex > 0) {
       letterIndex--;
       document
@@ -74,11 +80,10 @@ function startCooldown() {
   cooldown--;
   if (cooldown == 0) {
     let wpm = Math.round(matchesCount / 5 / (initialCooldown / 60));
-    let accuriacy = Math.round((matchesCount / letterIndex) * 100);
-    alert(
-      `You won! Your WPM is ${wpm}, Accuracy: ${accuriacy}%, Failures: ${failuresCount}`
-    );
-    location.reload();
+    let accuracy = Math.round((matchesCount / letterIndex) * 100);
+    localStorage.setItem("TypingGame_lastWPM", wpm);
+    localStorage.setItem("TypingGame_lastAccuracy", accuracy);
+    window.location.href = "./typing-game-win.html";
   }
 }
 
