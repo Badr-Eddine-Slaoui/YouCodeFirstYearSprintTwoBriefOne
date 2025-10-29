@@ -8,7 +8,7 @@ document.getElementById("last_score").textContent = lastScore.wpm;
 let failuresCount = 0;
 let matchesCount = 0;
 let wordAVG = 5;
-let initialCooldown = (cooldown = 60);
+let initialCooldown = (cooldown = 60 * localStorage.getItem("TypingGame_cooldown") || 60);
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 let typingParagraphArr = [
