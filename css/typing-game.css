@@ -6,6 +6,11 @@
   align-items: center;
   justify-content: space-around;
   gap: 2rem;
+  background: unset;
+  border: unset;
+  border-radius: unset;
+  box-shadow: unset;
+  padding: unset;
 }
 
 .container-header {
