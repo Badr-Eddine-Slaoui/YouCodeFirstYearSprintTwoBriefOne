@@ -110,3 +110,26 @@
     height: 100px;
   }
 }
+
+@media screen and (min-width: 1201px) {
+    body{
+      height: 125vh;
+    }
+    .container{
+      width: 60vw;
+      height: 115vh;
+    }
+
+    .container .title h1{
+      font-size: 32px;
+    }
+
+    .header .score {
+      font-size: 48px;
+    }
+
+    .card {
+      width: 100px;
+      height: 130px;
+    }
+}
