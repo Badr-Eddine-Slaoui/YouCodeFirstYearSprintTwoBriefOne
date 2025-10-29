@@ -1,18 +1,25 @@
-let lastScore = localStorage.getItem('MindGame_lastScore') || 0;
-document.getElementById('last-score').textContent = lastScore;
+const getLastScore = () => {
+    let lastScore = localStorage.getItem("MindGame_lastScore") || 0;
+    document.getElementById("last-score").textContent = lastScore + " pts";
+}
 
-let againButton = document.getElementById('again');
-let difficultiesButton = document.getElementById('difficulties');
-let mainButton = document.getElementById('main');
+const initEvents = () => {
+    let againButton = document.getElementById("again");
+    let difficultiesButton = document.getElementById("difficulties");
+    let mainButton = document.getElementById("main");
 
-againButton.addEventListener('click', () => {
-    window.location.href = './mind-game.html';
-});
+    againButton.addEventListener("click", () => {
+      window.location.href = "./mind-game.html";
+    });
 
-difficultiesButton.addEventListener('click', () => {
-    window.location.href = './mind-game-difficulty.html';
-});
+    difficultiesButton.addEventListener("click", () => {
+      window.location.href = "./mind-game-difficulty.html";
+    });
 
-mainButton.addEventListener('click', () => {
-    window.location.href = '../index.html';
-});
+    mainButton.addEventListener("click", () => {
+      window.location.href = "../index.html";
+    });
+}
+
+getLastScore();
+initEvents();
