@@ -127,3 +127,32 @@
 
 }
 
+@media screen and (min-width: 1201px) {
+    body{
+      min-height: 150vh;
+    }
+    .container{
+      min-height: 120vh;
+    }
+
+    .container .title h1{
+      font-size: 32px;
+    }
+
+    .header .score {
+      font-size: 48px;
+    }
+
+    .typing-container .header p {
+      font-size: 20px;
+    }
+
+    .typing-container .header .cooldown {
+      font-size: 32px;
+    }
+
+    .typing-paragraph{
+      font-size: 28px;
+      line-height: 2;
+    }
+}
