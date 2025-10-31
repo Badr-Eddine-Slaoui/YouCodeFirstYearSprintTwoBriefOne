@@ -22,7 +22,7 @@ const randomParagraph = () => {
 const initEvents = (paragraph) => {
   document.addEventListener("keydown", function (event) {
     let key = event.key;
-    if (key === "Shift") {
+    if (key === "Shift" || key === "CapsLock" || key === "Control" || key === "Alt" || key === "Escape" || key === "Tab" || key === "Enter") {
       return;
     }
 

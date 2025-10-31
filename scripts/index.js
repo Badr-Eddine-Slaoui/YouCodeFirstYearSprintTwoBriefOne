@@ -4,7 +4,7 @@ const calculateGlobalScore = () => {
     let last_score = localStorage.getItem("MindGame_lastScore") || 0;
 
     let global_score = parseFloat(
-      wpm_score + (accuracy_score * wpm_score) / 100 + last_score
+      (accuracy_score * 100) / wpm_score + last_score + wpm_score
     ).toFixed(2);
     document.getElementById("global-score").textContent = global_score + " pts";
 }
