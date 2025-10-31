@@ -166,7 +166,7 @@ const initEvents = () => {
             secondCard.children[0].classList.remove("rotate");
             flippedCards = [];
             logicProtector.style.display = "none";
-          }, 1000);
+          }, 500);
           return;
         } else {
           logicProtector.style.display = "none";
