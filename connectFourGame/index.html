@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Connect Four</title>
+  </head>
+
+  <body data-state="start">
+    <div class="game | full-vp">
+      <div class="game__wrapper | full-vp">
+        <header class="game__header">
+          <button id="menu" class="btn-menu | game-btn">Menu</button>
+          <button id="restart" class="btn-restart | game-btn">Restart</button>
+        </header>
+        <div class="scores">
+          <div class="score1 score | box box--white" data-value="0"></div>
+          <div class="score2 score | box box--white" data-value="0"></div>
+        </div>
+        <div class="grid">
+          <div class="grid__wrapper">
+            <div class="column" data-column="1">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="2">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="3">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="4">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="5">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="6">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+            <div class="column" data-column="7">
+              <div class="slot" data-row="1"></div>
+              <div class="slot" data-row="2"></div>
+              <div class="slot" data-row="3"></div>
+              <div class="slot" data-row="4"></div>
+              <div class="slot" data-row="5"></div>
+              <div class="slot" data-row="6"></div>
+            </div>
+          </div>
+        </div>
+        <div class="status">
+          <div class="info | box box--white">
+            <button id="play" class="btn-play | game-btn">Play</button>
+          </div>
+          <div class="timer" data-value="26"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./src/main.js"></script>
+</html>
