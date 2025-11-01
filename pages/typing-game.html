@@ -8,24 +8,46 @@
 <link rel="stylesheet" href="../css/typing-game.css">
 </head>
 <body>
-  <div id="container" class="container">
-    <div class="container-header">
-      <div class="title">
-        <h1>Last Score</h1>
-      </div>
-      <div class="score">
-        <p id="last_score">0</p>
-        <span>wpm</span>
+  <div id="container" class="container game">
+    <div class="header">
+      <div class="wrapper">
+        <div class="row">
+          <div class="title">
+            <p>Best wpm</p>
+          </div>
+          <div class="score">
+            <p id="best_wpm">0 <span>wpm</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">
+            <p>Best accuracy</p>
+          </div>
+          <div class="score">
+            <p id="best_accuracy">0 <span>%</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">
+            <p>Mistakes</p>
+          </div>
+          <div class="score">
+            <p id="mistakes">0</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">
+            <p>time</p>
+          </div>
+          <div class="score">
+            <p id="cooldown">
+              <span class="minutes">00</span>:<span class="seconds">00</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="typing-container">
-        <div class="header">
-            <p>Start Typing...</p>
-            <div class="cooldown">
-                <span class="minutes">00</span>:
-                <span class="seconds">00</span>
-            </div>
-        </div>
         <p class="typing-paragraph"></p>
     </div>
   </div>

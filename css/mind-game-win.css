@@ -1,17 +1,8 @@
-.container .title,
-.container .score{
-  justify-content: space-around;
-}
-
 .container .body .btn:last-of-type, .container .body .btn:nth-of-type(2){
   font-size: 7px;
 }
 
 @media screen and (min-width: 413px) and (max-width: 1200px) {
-  .container .score {
-    width: 50%;
-  }
-
   .container .body .btn:last-of-type, .container .body .btn:nth-of-type(2){
     font-size: 11px;
   }
@@ -19,10 +10,6 @@
 }
 
 @media screen and (min-width: 1201px) {
-    .container .score {
-      width: 50%;
-    }
-
     .container .body .btn:last-of-type, .container .body .btn:nth-of-type(2){
       font-size: 12px;
     }

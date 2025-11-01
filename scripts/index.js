@@ -1,25 +1,28 @@
-const calculateGlobalScore = () => {
-    let wpm_score = localStorage.getItem("TypingGame_lastWPM") || 0;
-    let accuracy_score = localStorage.getItem("TypingGame_lastAccuracy") || 0;
-    let last_score = localStorage.getItem("MindGame_lastScore") || 0;
+const calculateTotalScore = () => {
+  let wpm_score = parseInt(localStorage.getItem("TypingGame_bestWPM")) || 0;
+  let best_score = parseInt(localStorage.getItem("MindGame_bestScore")) || 0;
+  let accuracy_score = parseInt(localStorage.getItem("TypingGame_bestAccuracy")) || 0;
 
-    let global_score = parseFloat(
-      (accuracy_score * 100) / wpm_score + last_score + wpm_score
-    ).toFixed(2);
-    document.getElementById("global-score").textContent = global_score + " pts";
-}
+  let total_score = best_score + (wpm_score !== 0 && accuracy_score !== 0 ? ((accuracy_score * (wpm_score * 5)) / 100) : 0);
+  document.getElementById("total-score").innerHTML = total_score + " <span>pts</span>";
+};
 
-const initEvents = () =>  {
-    let typingGameButton = document.getElementById("typing-game");
-    let mindGameButton = document.getElementById("mind-game");
-    mindGameButton.addEventListener("click", function () {
-      window.location.href = "./pages/mind-game-difficulty.html";
-    });
+const initEvents = () => {
+  let typingGameButton = document.getElementById("typing-game");
+  let mindGameButton = document.getElementById("mind-game");
+  let connectFourButton = document.getElementById("connect-four");
+  mindGameButton.addEventListener("click", function () {
+    window.location.href = "./pages/mind-game-difficulty.html";
+  });
 
-    typingGameButton.addEventListener("click", function () {
-      window.location.href = "./pages/typing-game-cooldowns.html";
-    });
-}
+  typingGameButton.addEventListener("click", function () {
+    window.location.href = "./pages/typing-game-cooldowns.html";
+  });
 
-calculateGlobalScore();
+  connectFourButton.addEventListener("click", function () {
+    window.location.href = "./connectFourGame/index.html";
+  });
+};
+
+calculateTotalScore();
 initEvents();

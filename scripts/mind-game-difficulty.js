@@ -1,18 +1,19 @@
-const getLastScore = () => {
-    let lastScore = localStorage.getItem("MindGame_lastScore") || 0;
-    document.getElementById("last-score").textContent = lastScore + " pts";
-}
+const getBestScore = () => {
+  let bestScore = localStorage.getItem("MindGame_bestScore") || 0;
+  document.getElementById("best-score").innerHTML =
+    bestScore + " <span>pts</span>";
+};
 
 const initEvents = () => {
-    let difficultyButtons = document.querySelectorAll(".btn");
+  let difficultyButtons = document.querySelectorAll(".btn");
 
-    difficultyButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        localStorage.setItem("MindGame_difficulty", button.id);
-        window.location.href = "./mind-game.html";
-      });
+  difficultyButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      localStorage.setItem("MindGame_difficulty", button.id);
+      window.location.href = "./mind-game.html";
     });
-}
+  });
+};
 
-getLastScore();
+getBestScore();
 initEvents();

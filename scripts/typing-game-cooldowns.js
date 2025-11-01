@@ -4,18 +4,18 @@ let cooldowns = {
   hard: 5,
 };
 
-const initLastScores = () => {
-  let lastScore = {
-    wpm: localStorage.getItem("TypingGame_lastWPM") || 0,
-    accuracy: localStorage.getItem("TypingGame_lastAccuracy") || 0,
+const initBestScores = () => {
+  let bestScore = {
+    wpm: localStorage.getItem("TypingGame_bestWPM") || 0,
+    accuracy: localStorage.getItem("TypingGame_bestAccuracy") || 0,
   };
 
   document.getElementById(
     "wpm"
-  ).innerHTML = `${lastScore.wpm} <span>wpm</span>`;
+  ).innerHTML = `${bestScore.wpm} <span>wpm</span>`;
   document.getElementById(
     "accuracy"
-  ).innerHTML = `${lastScore.accuracy} <span>%</span>`;
+  ).innerHTML = `${bestScore.accuracy} <span>%</span>`;
 };
 
 const initEvents = () => {
@@ -29,5 +29,5 @@ const initEvents = () => {
     });
 }
 
-initLastScores();
+initBestScores();
 initEvents();
