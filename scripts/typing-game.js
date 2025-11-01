@@ -6,12 +6,13 @@ let letterIndex = 0;
 let typingParagraphArr;
 
 const getLastScore = () => {
-  let lastScore = {
-    wpm: localStorage.getItem("TypingGame_lastWPM") || 0,
-    accuracy: localStorage.getItem("TypingGame_lastAccuracy") || 0,
+  let bestScore = {
+    wpm: localStorage.getItem("TypingGame_bestWPM") || 0,
+    accuracy: localStorage.getItem("TypingGame_bestAccuracy") || 0,
   };
 
-  document.getElementById("last_score").textContent = lastScore.wpm;
+  document.getElementById("best_wpm").innerHTML = bestScore.wpm + " <span>wpm</span>";
+  document.getElementById("best_accuracy").innerHTML = bestScore.accuracy + " <span>%</span>";
 };
 
 const randomParagraph = () => {
@@ -29,6 +30,7 @@ const initEvents = (paragraph) => {
     event.preventDefault();
     if (key === "Backspace") {
       if (letterIndex > 0) {
+        if (document.querySelector(`#letter-${letterIndex}`).classList.contains("correct")) matchesCount--;
         letterIndex--;
         document
           .querySelector(`#letter-${letterIndex}`)
@@ -50,6 +52,7 @@ const initEvents = (paragraph) => {
           .classList.remove("correct");
         document.querySelector(`#letter-${letterIndex}`).classList.add("wrong");
         failuresCount++;
+        document.getElementById("mistakes").textContent = failuresCount;
         letterIndex++;
       }
     }
@@ -77,10 +80,16 @@ const startCooldown = () => {
 
   cooldown--;
   if (cooldown == 0) {
-    let wpm = Math.round(matchesCount / 5 / (initialCooldown / 60));
-    let accuracy = Math.floor((matchesCount / letterIndex) * 100).toFixed(1);
+    let wpm = matchesCount !== 0 ? Math.round((matchesCount / 5) / (initialCooldown / 60)) : 0;
+    let accuracy = matchesCount !== 0 && letterIndex !== 0 ? Math.floor((( matchesCount - failuresCount) / letterIndex) * 100).toFixed(1) : 0;
     localStorage.setItem("TypingGame_lastWPM", wpm);
     localStorage.setItem("TypingGame_lastAccuracy", accuracy);
+    if (wpm > localStorage.getItem("TypingGame_bestWPM")) {
+      localStorage.setItem("TypingGame_bestWPM", wpm);
+    }
+    if (accuracy > localStorage.getItem("TypingGame_bestAccuracy")) {
+      localStorage.setItem("TypingGame_bestAccuracy", accuracy);
+    }
     window.location.href = "./typing-game-win.html";
   }
 };

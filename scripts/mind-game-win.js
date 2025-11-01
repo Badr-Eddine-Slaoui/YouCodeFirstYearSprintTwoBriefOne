@@ -1,6 +1,6 @@
 const getLastScore = () => {
     let lastScore = localStorage.getItem("MindGame_lastScore") || 0;
-    document.getElementById("last-score").textContent = lastScore + " pts";
+    document.getElementById("last-score").innerHTML = lastScore + " <span>pts</span>";
 }
 
 const initEvents = () => {

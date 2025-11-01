@@ -1,15 +1,30 @@
-let easyModeContainerHeight = Math.round((parseFloat(window.getComputedStyle(document.getElementById("container")).height.replace("px", "")) / window.innerHeight) * 100) - 40;
-
 let difficulty = localStorage.getItem("MindGame_difficulty") || "easy";
 let lastScore = localStorage.getItem("MindGame_lastScore") || 0;
+let bestScore = localStorage.getItem("MindGame_bestScore") || 0;
 let score = 0;
 let failuresCount = 0;
 let matchesCount = 0;
 
 let cardsArr;
 
-let container = document.querySelector(".cards");
+let container = document.querySelector(".cards .wrapper");
 let loadingText = document.createElement("h1");
+
+const startTimer = () => {
+  const timerElement = document.getElementById("time");
+  let minutes = 0;
+  let seconds = 0;
+  setInterval(() => {
+    seconds++;
+    if (seconds >= 60) {
+      minutes++;
+      seconds = 0;
+    }
+    timerElement.textContent = `${minutes < 10 ? `0${minutes}` : minutes}:${
+      seconds < 10 ? `0${seconds}` : seconds
+    }`;seconds;
+  }, 1000);
+}
 
 const initLoadingText = () => {
   loadingText.textContent = "Loading...";
@@ -18,7 +33,13 @@ const initLoadingText = () => {
   loadingText.style.display = "flex";
   loadingText.style.justifyContent = "center";
   loadingText.style.alignItems = "center";
-  loadingText.style.fontSize = "5rem";
+  if (window.innerWidth <= 412) {
+    loadingText.style.fontSize = "3rem";
+  }else if (window.innerWidth > 412 && window.innerWidth <= 1200) {
+    loadingText.style.fontSize = "4rem";
+  } else {
+    loadingText.style.fontSize = "5rem";
+  }
   container.append(loadingText);
 }
 
@@ -44,13 +65,10 @@ const shuffleArray = (array) => {
 }
 
 const adjustDifficulty = () => {
+  document.body.dataset.difficulty = difficulty;
   let newArr = [];
   let i = 0;
     if (difficulty === "easy") {
-        document.getElementById("container").style.height = `${easyModeContainerHeight}vh`;
-        if(window.innerWidth > 1200) {
-            document.body.style.height = "100vh";
-        }
     cardsArr.forEach((card) => {
       if (i < 6) {
         matchCard = cardsArr.find((c) => c.id === card.match);
@@ -76,10 +94,10 @@ const adjustDifficulty = () => {
 }
 
 const initializeCards = () => {
-    const lastScoreElement = document.getElementById("last_score");
-    lastScoreElement.textContent = lastScore + " pts";
+    const bestScoreElement = document.getElementById("best_score");
+    bestScoreElement.innerHTML = bestScore + " <span>pts</span>";
     cardsArr = adjustDifficulty();
-    const cardsContainer = document.querySelector(".cards");
+    const cardsContainer = document.querySelector(".cards .wrapper");
     cardsArr.forEach((card) => {
       const cardElement = document.createElement("div");
       cardElement.classList.add("card");
@@ -118,6 +136,7 @@ const showAllCardThenFlip = () => {
     cards.forEach((card) => {
       card.children[0].classList.remove("rotate");
     });
+    startTimer();
   }, 3000);
 }
 
@@ -126,6 +145,7 @@ const initEvents = () => {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
+      document.getElementById('flips').textContent++;
       const logicProtector = document.getElementById("logic-protector");
       const inner = card.children[0];
       if (!inner.classList.contains("rotate")) {
@@ -148,11 +168,16 @@ const initEvents = () => {
             secondCardMatch === parseInt(firstCardId)
           ) {
             score += 100;
+            document.getElementById("current_score").innerHTML =
+              score + " <span>pts</span>";
             matchesCount++;
             flippedCards = [];
             if (matchesCount === cardsArr.length / 2) {
               setTimeout(() => {
                 localStorage.setItem("MindGame_lastScore", score);
+                if (score > bestScore) {
+                  localStorage.setItem("MindGame_bestScore", score);
+                }
                 window.location.href = "./mind-game-win.html";
               }, 1000);
             }
@@ -160,7 +185,11 @@ const initEvents = () => {
             return;
           }
           setTimeout(() => {
-            score -= 5;
+            if (score > 0) {
+              score -= 5;
+              document.getElementById("current_score").innerHTML =
+                score + " <span>pts</span>";
+            }
             failuresCount++;
             firstCard.children[0].classList.remove("rotate");
             secondCard.children[0].classList.remove("rotate");
