@@ -1,61 +1,47 @@
-.container{
-  width: 80vw;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 80vw;
-  height: 50vh;
-  background: unset;
-  border: unset;
-  border-radius: unset;
-  box-shadow: unset;
-  padding: unset;
-  gap: 2rem;
-}
-
-.header {
-  width: 100%;
-  height: 15%;
-  background: var(--bg-color);
-  border: var(--border);
-  border-radius: 20px;
-  padding: 0 20px;
-  box-shadow: var(--box-shadow);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: bolder;
-  color: var(--text-color);
-}
-
-.container .title h1{
-  color: var(--title-color);
-  font-size: 20px;
-  text-transform: uppercase;
-}
-
-.header .score {
-  font-size: 32px;
-}
-
 .cards {
   width: 100%;
-  height: 85%;
-  background: var(--bg-color);
-  border: var(--border);
-  border-radius: 20px;
-  box-shadow: var(--box-shadow);
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body[data-difficulty="easy"] .cards{
+  background-image: var(--board-easy);
+}
+
+body[data-difficulty="medium"] .cards{
+  background-image: var(--board-medium);
+}
+
+body[data-difficulty="hard"] .cards{
+  background-image: var(--board-hard);
+}
+
+.cards .wrapper{
+  width: 100%;
+  height: 65%;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   perspective: 1000px;
 }
 
+body[data-difficulty="medium"] .cards .wrapper{
+  height: 70%;
+}
+
+body[data-difficulty="hard"] .cards .wrapper{
+  width: 95%;
+  height: 75%;
+}
+
 .card {
-  width: 53px;
-  height: 68px;
+  width: 70px;
+  height: 105px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -71,7 +57,6 @@
   transition: transform 0.5s ease-in-out;
   will-change: transform;
   transform-style: preserve-3d;
-  border: 1px solid #a9eeff;
   border-radius: 5px;
   box-shadow: 0px 0px 16px rgba(93, 93, 93, 0.6);
 }
@@ -97,44 +82,30 @@
 }
 
 @media screen and (min-width: 413px) and (max-width: 1200px) {
-  .container{
-    width: 80vw;
-    height: 100vh;
+  .cards .wrapper{
+    width: 70%;
   }
 
-  .container .title h1{
-    font-size: 28px;
+  body[data-difficulty="medium"] .cards .wrapper{
+    width: 60%;
   }
 
-  .header .score {
-    font-size: 40px;
+  body[data-difficulty="hard"] .cards .wrapper{
+    width: 58%;
   }
 
-  .card {
-    width: 80px;
-    height: 100px;
-  }
 }
 
 @media screen and (min-width: 1201px) {
-    body{
-      height: 125vh;
-    }
-    .container{
-      width: 60vw;
-      height: 115vh;
+    .cards .wrapper{
+      width: 30%;
     }
 
-    .container .title h1{
-      font-size: 32px;
+    body[data-difficulty="medium"] .cards .wrapper{
+      width: 25%;
     }
 
-    .header .score {
-      font-size: 48px;
-    }
-
-    .card {
-      width: 100px;
-      height: 130px;
+    body[data-difficulty="hard"] .cards .wrapper{
+      width: 26%;
     }
 }
